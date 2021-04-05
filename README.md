@@ -9,6 +9,20 @@
 <details>
 <summary>Local Modules</summary>
 যে সকল modules আমরা নিজেরা তৈরি করে থাকি সে সকল modules কে local modules বলা হয়।
+
+```javascript
+নিজেরা modules তৈরি করলে সেটা নিম্নক্তভাবে করতে হবে... 
+const getName = () => 'Md Abdullah Fardus'; (এখানে ES6 এর ফাংশন ব্যবহার করা হয়েছে)
+const getDOB = () => '08/08/1993';
+
+exports.name = getName; (তৈরি করা ফাংশন exports করতে হবে ব্যবহার করার জন্য)
+exports.age = getDOB; (exports. এর পরে যেকোনো নাম দেয়া যাবে)
+(উপরোক্ত পদ্ধতিতে exports করার সুবিধা হলো এটাকে পছন্দ অনুযায়ী নামে exports করা যায়)
+
+
+```
+
+    
 </details>
 <details>
 <summary>Built in Modules</summary>
