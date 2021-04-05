@@ -132,4 +132,28 @@ fs.exists('demo.txt',(result)=>{
 টার্নারি কন্ডিশনাল অপারেটর ব্যবহারের মাধ্যমে)
 ```
 </details>
+<details>
+<summary>http</summary>
+http module ব্যবহার করার পূর্বে এটাকে import/require করে নিতে হবে
+
+```javascript
+    const http = require('http');
+```
+http এর অন্তর্ভুক্ত modules সমূহ নিম্নোক্ত উপায়ে ব্যবহার করা যায়... 
+- createServer (সার্ভার তৈরি করার জন্য ব্যবহার করা হয়)
+```javascript
+const port = 3000; (সার্ভারের যেকোনো একটি পোর্ট নাম্বার দিয়ে দিতে যাতে সার্ভার রান করে। এখানে 3000 এর স্থলে যেকোনো সংখ্যা চাইলে ব্যবহার করতে পারবেন)
+const hostName = '0.0.0.0'; (একটি হোস্ট নাম প্রদান করতে হবে। আপনি চাইলে হোস্ট নাম হিসেবে 127.0.0.1 ব্যবহার করতে পারেন।)
+
+http.createServer((req, res)=>{
+        res.end('<h1>Hello! I am your First server...</h1>')
+    }).listen(port, hostName,()=> console.log(`server is running successfully at http://${hostName}:${port}`));
+(একটি সার্ভার তৈরিতে দুটি প্যারামিটার দিয়ে দিতে হয়। একটি request এবং অন্যটি হলো
+response. এখানে response এ সেটাই দেখানো হবে যেটা আপনি লিখে দিবেন। আমরা 
+res.end method ব্যবহার করেছি response হিসেবে। আপনি চাইলে res.send ব্যবহার
+করতে পারেন। অন্যদিকে সার্ভার সঠিকভাবে চালু হয়েছে তা বোঝার জন্য আমরা এর শেষে কল বেক হিসেবে .listen ব্যবহার করেছি। যেখানে আমরা port এবং hostName 
+দুটো প্যারমিটার পাছ করেছি সেই সাথে কল বেক হিসেবে console.log এর ভেতরে ম্যাসেজ দিয়ে দিয়েছি।
+আর এই সকল কাজ করতে আমরা ES6 এর লিটারালাল বেক টিক ব্যবহার করেছি।)
+```
+</details>
 </details>
