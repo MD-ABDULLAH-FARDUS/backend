@@ -43,6 +43,10 @@ module.exports = {
 (modules.export কথাটি লিখে = সমান চিহ্ন দিয়ে দ্বিতীয় বন্ধনীর মধ্যে variable এর নাম দেয়া যায়,
 তবে এক্ষেত্রেও নিজের ইচ্ছেমত নতুন নাম দেয়া যায় না export এর ক্ষেত্রে,
 আপনি চাইলে এই পদ্ধতিতে ফাংশনও export করতে পারবেন)
+
+const author = require('./Local_modules'); (require এর মাধ্যমে import করে নিতে হবে)
+console.log(author.fatherName);
+console.log(author.motherName);
 ```
 
     
