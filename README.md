@@ -61,4 +61,45 @@ console.log(author.motherName);
  - path (ফাইলের পাথ হ্যান্ডেল করতে ব্যবহৃত হয়)
  - url (url string parse করতে ব্যবহৃত হয়)
  - util (utility functions ব্যবহার করতে ব্যবহৃত হয়)
+  
+
+
+<details>
+    <summary>File System (fs)</summary>
+fs module ব্যবহার করার পূর্বে এটাকে যেকোনো নামে require করে নিতে হবে 
+
+```javascript
+const fs = require('fs');
+```
+fs module এ নিম্নোক্ত functions/methods সমূহ রয়েছে - 
+
+- writeFile (এর সাহায্যে নতুন কোনো ফাইল তৈরি করা যায়)
+```javascript
+fs.writeFile('demo.txt','This is demo text',(err)=>{
+       return (err ? console.log('err') : console.log('successful'))
+    })
+(আমরা demo নামে একটি text file তৈরি করার জন্য উপরোক্ত কোডটি ব্যবহার করেছি। 
+প্রথম বন্ধনীর ভেতরে আমরা প্রহমে যে ফাইলটি তৈরি করতে চাই তার নাম extension সহ লিখেছি অর্থাৎ demo.txt
+তারপর ফাইলের ভেতরে আমরা কিছু text লিখে দিয়েছি এবং
+সর্বশেষে আমরা একটা call back ফাংশন দিয়েছি।
+এখানে ফাংশনের ভেতরে আমরা একটি প্যারামিটার পাছ করেছি নামে err নামে।
+এরপর আমরা একটি টার্নারী কন্ডিশন ব্যবহার করেছি, অর্থাৎ ফাংশনের মধ্যে থাকা প্যারামিটার 
+err হলে err লেখা console এ প্রিন্ট হবে, আর err না হলে console এ successful প্রিন্ট হবে।)
+```
+- appendFile (এর সাহায্যে কোনো ফাইল আপডেট করা যায়) 
+```javascript
+```
+- readFile (এর সাহায্যে কোনো ফাইল রিড করা যায়)
+```javascript
+```
+- renameFile (এর সাহায্যে কোনো ফাইলের নাম পরিবর্তন করা যায়)
+```javascript
+```
+- unlink (এর সাহায্যে কোনো ফাইল ডিলিট করা যায়)
+```javascript
+```
+- exists (এর সাহায্যে কোনো ফাইল খোজা যায়)
+```javascript
+```
+</details>
 </details>
