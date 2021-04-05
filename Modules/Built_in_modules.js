@@ -14,6 +14,14 @@ const fileSystem = () => {
     fs.readFile('demo.txt','utf-8',(err, data)=>{
        return (err ? console.log('err') : console.log(data))
     })
+    // Rename file
+    // fs.rename('demo.txt demo2.text','demo2.txt',(err)=>{
+    //    return (err ? console.log('err') : console.log('successful'))
+    // })
+    // Delete file
+    fs.unlink('demo.txt,kk.txt',(err)=>{
+       return (err ? console.log('err') : console.log('successful'))
+    })
     
 }
 

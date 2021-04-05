@@ -106,9 +106,20 @@ fs.appendFile('demo.txt','This text is included by appendFile method.',(err)=>{
 ```
 - renameFile (এর সাহায্যে কোনো ফাইলের নাম পরিবর্তন করা যায়)
 ```javascript
+fs.rename('demo.txt demo2.text','demo2.txt',(err)=>{
+       return (err ? console.log('err') : console.log('successful'))
+    })
+(এই পদ্ধতিতে যে ফাইলের নাম পরিবর্তন করা হবে সেই ফাইলের নাম প্রথমে extension সহ লিখতে হবে
+তারপর যে নতুন নামকরণ করতে চান সে নামটি লিখে দিতে হবে এবং শেষে কল বেক ফাংশনের মধ্যে একটি
+প্যারামিটার পাছ করে err অথবা successful message console এ প্রিন্ট কমান্ড দিতে পারেন)
 ```
 - unlink (এর সাহায্যে কোনো ফাইল ডিলিট করা যায়)
 ```javascript
+fs.unlink('demo.txt,kk.txt',(err)=>{
+       return (err ? console.log('err') : console.log('successful'))
+    })
+(এই পদ্ধতিতে শুধু যে ফাইলটি ডিলিট করা হবে তার নাম extension সহ দিয়ে একটি কল বেক ফাংশনে
+একটি প্যারামিটার পাছ করে err অথবা successfull message প্রিন্ট করতে পারেন)
 ```
 - exists (এর সাহায্যে কোনো ফাইল খোজা যায়)
 ```javascript
