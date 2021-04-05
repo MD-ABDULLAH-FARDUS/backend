@@ -148,6 +148,7 @@ const hostName = '0.0.0.0'; (একটি হোস্ট নাম প্রদ
 http.createServer((req, res)=>{
         res.end('<h1>Hello! I am your First server...</h1>')
     }).listen(port, hostName,()=> console.log(`server is running successfully at http://${hostName}:${port}`));
+    
 (একটি সার্ভার তৈরিতে দুটি প্যারামিটার দিয়ে দিতে হয়। একটি request এবং অন্যটি হলো
 response. এখানে response এ সেটাই দেখানো হবে যেটা আপনি লিখে দিবেন। আমরা 
 res.end method ব্যবহার করেছি response হিসেবে। আপনি চাইলে res.send ব্যবহার
