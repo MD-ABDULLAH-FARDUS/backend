@@ -19,8 +19,12 @@ const fileSystem = () => {
     //    return (err ? console.log('err') : console.log('successful'))
     // })
     // Delete file
-    fs.unlink('demo.txt,kk.txt',(err)=>{
-       return (err ? console.log('err') : console.log('successful'))
+    // fs.unlink('demo.txt,kk.txt',(err)=>{
+    //    return (err ? console.log('err') : console.log('successful'))
+    // })
+    // Search file
+    fs.exists('demo.txt',(result)=>{
+       return (result ? console.log('found') : console.log('not found'))
     })
     
 }

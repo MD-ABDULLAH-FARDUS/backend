@@ -123,6 +123,12 @@ fs.unlink('demo.txt,kk.txt',(err)=>{
 ```
 - exists (এর সাহায্যে কোনো ফাইল খোজা যায়)
 ```javascript
+fs.exists('demo.txt',(result)=>{
+       return (result ? console.log('found') : console.log('not found'))
+    })
+(এই পদ্ধতিতে যে ফাইলের খোজ করা হবে তার নাম extension সহ লিখে তারপর একটি কল বেক ফাংশনে
+একটি প্যারামিটার পাছ করে দিয়ে আপনি চাইলে তার মাধ্যমে found অথবা not found প্রিন্ট করাতে পারেন
+টার্নারি কন্ডিশনাল অপারেটর ব্যবহারের মাধ্যমে)
 ```
 </details>
 </details>
