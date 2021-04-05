@@ -9,7 +9,7 @@ exports.age = getDOB;
 const fatherName = 'Md Olliullah Anshari';
 const motherName = 'Jannatul Fardus';
 
-// module.exports = {
-//     fatherName,
-//     motherName
-// }
+module.exports = {
+    fatherName,
+    motherName
+}
