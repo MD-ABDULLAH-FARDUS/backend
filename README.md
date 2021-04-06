@@ -194,3 +194,29 @@ res.end method ব্যবহার করেছি response হিসেবে
 ```
 </details>
 </details>
+
+<details>
+<summary>External Modules</summary>
+
+যে সকল modules আমরা install করে ব্যবহার করে থাকি সেগুলোকে external modules বলা হয়। 
+এই extenal modules গুলো <http://www.npmjs.com> থেকে চাইলে ব্যবহার করা যেতে পারে। external modules
+ব্যবহারের সুবিধা হলো এসকল modules অন্য কেউ পূর্বে থেকেই তৈরি করে রেখেছে, তাই আমাদের এসব
+পুনরায় আর তৈরি করতে হবে না। 
+যাই হোক external modules ব্যবহার করার জন্য নিম্নোক্ত ধাপ গুলো অনুসরণ করতে হবে যথাক্রমে... 
+
+প্রথমে terminal open করে নিয়ে তাতে নিম্নোক্ত কোডটি টাইপ করে enter দিতে হবে 
+
+```
+npm init 
+অথবা
+npm init -y 
+(এতে করে পর্যায়ক্রমে যে তথ্যগুলো দিয়ে package.json file তৈরি করতে হয়, তা আর করতে হয় না)
+```
+এবার যে module টি ব্যবহার করতে চান, তার installation এর প্রক্রিয়া দেখে সে অনুযায়ী terminal এ type করে install করে নিতে হবে। যেমন -
+
+```
+npm install nodemon
+```
+
+install হয়ে গেলে সেই package টি কে প্রথমে require করে নিতে হবে। তারপর documentation থেকে দেখে সেটার ব্যবহার প্রণালী দেখে আপনি চাইলে ব্যবহার করতে পারেন। 
+</details>
