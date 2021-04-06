@@ -225,4 +225,6 @@ const fruitsName = require('random-fruits-name')
 
 console.log(fruitsName('es'));
 ```
+
+> কোনো package install করলে node_modules নামে একটি ফোল্ডার নিজে থেকে তৈরি হয়ে যায়। যার size বেশ বড় হয়ে থাকে। আমরা সচরাচর চাই না এই ফাইলটা github এ upload করতে তাই এটাকে ignore করার জন্য একটা ফাইল তৈরি করতে হবে .gitignore নামে এবং সেখানে লিখে দিতে হবে node_modules/ 
 </details>
