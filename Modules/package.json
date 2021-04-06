@@ -16,6 +16,6 @@
   "author": "Md Abdullah Fardus",
   "license": "ISC",
   "dependencies": {
-    "yourserver3001": "^1.0.4"
+    "random-fruits-name": "^1.9.0"
   }
 }

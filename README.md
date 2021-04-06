@@ -215,8 +215,14 @@ npm init -y
 এবার যে module টি ব্যবহার করতে চান, তার installation এর প্রক্রিয়া দেখে সে অনুযায়ী terminal এ type করে install করে নিতে হবে। যেমন -
 
 ```
-npm install nodemon
+npm install random-fruits-name
 ```
 
-install হয়ে গেলে সেই package টি কে প্রথমে require করে নিতে হবে। তারপর documentation থেকে দেখে সেটার ব্যবহার প্রণালী দেখে আপনি চাইলে ব্যবহার করতে পারেন। 
+install হয়ে গেলে সেই package টি কে প্রথমে require করে নিতে হবে। তারপর documentation থেকে দেখে সেটার ব্যবহার প্রণালী দেখে আপনি চাইলে ব্যবহার করতে পারেন। উদাহরণস্বরূপ আমাদের install কৃত package কিভাবে ব্যবহার করতে হবে সেটা দেখানো হলো... 
+
+```javascript
+const fruitsName = require('random-fruits-name')
+
+console.log(fruitsName('es'));
+```
 </details>

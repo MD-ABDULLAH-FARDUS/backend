@@ -1,3 +1,3 @@
-const server = require('yourserver3001')
+const fruitsName = require('random-fruits-name')
 
-server
+console.log(fruitsName('es'));
