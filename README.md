@@ -148,13 +148,49 @@ const hostName = '0.0.0.0'; (একটি হোস্ট নাম প্রদ
 http.createServer((req, res)=>{
         res.end('<h1>Hello! I am your First server...</h1>')
     }).listen(port, hostName,()=> console.log(`server is running successfully at http://${hostName}:${port}`));
-    
+     
 (একটি সার্ভার তৈরিতে দুটি প্যারামিটার দিয়ে দিতে হয়। একটি request এবং অন্যটি হলো
 response. এখানে response এ সেটাই দেখানো হবে যেটা আপনি লিখে দিবেন। আমরা 
 res.end method ব্যবহার করেছি response হিসেবে। আপনি চাইলে res.send ব্যবহার
 করতে পারেন। অন্যদিকে সার্ভার সঠিকভাবে চালু হয়েছে তা বোঝার জন্য আমরা এর শেষে কল বেক হিসেবে .listen ব্যবহার করেছি। যেখানে আমরা port এবং hostName 
 দুটো প্যারমিটার পাছ করেছি সেই সাথে কল বেক হিসেবে console.log এর ভেতরে ম্যাসেজ দিয়ে দিয়েছি।
 আর এই সকল কাজ করতে আমরা ES6 এর লিটারালাল বেক টিক ব্যবহার করেছি।)
+```
+
+- http (Request)
+
+```javascript
+    নিম্নোক্ত উপায়ে http থেকে request করা হয়ে থাকে, তা যথাক্রমে... 
+
+    - get()
+    - post()
+    - delete()
+    - put()
+    - head()
+```
+
+- http (Response)
+
+```javascript
+    http থেকে দুই ভাবে আমাদেরকে response পাঠিয়ে থাকে। একটি হলো status code আকারে অন্যটি হলো Data আকারে। 
+    নিম্নোক্ত উপায়ে http থেকে status code response করা হয়ে থাকে, তা যথাক্রমে... 
+
+    - Informational Response (100-199)
+    - Successful Response (200-299)
+    - Redirects (300-399)
+    - Client Errors (400-499)
+    - Server Errors (500-599)
+```
+
+```javascript
+    http.createServer((req, res)=>{
+        res.writeHead(202, {'Content-Type':'text/html'}) 
+        (202 এখানে status code set করার জন্য ব্যবহৃত হয়েছে। আর Content-type দ্বারা বলে দেয়া হয়েছে এটি
+        কি প্রকারের content. যেমন- এখানে আমরা text/html এর পরিবর্তে text/plain ব্যবহার করতে পারতাম)
+        res.write('<h1>Hello Sir, I am server2</h1>')
+        res.end()
+    }).listen(port,hostname,
+        console.log(`Your server2 is successfully running at http://${hostname}:${port}`))
 ```
 </details>
 </details>
