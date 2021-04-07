@@ -9,7 +9,7 @@ const server = http.createServer((req, res)=>{
       fs.readFile(fileLocation,(err,data)=>{
          res.writeHead(statusCode, {"Content-Type":"text/html"})
          res.write(data)
-         res.end
+         res.end()
       })
    }
 

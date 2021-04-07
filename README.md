@@ -2,7 +2,10 @@
 
 ## Leaning Topics
 
-1. [Modules](#modules)
+- [Backend](#backend)
+  - [Leaning Topics](#leaning-topics)
+    - [Modules](#modules)
+    - [HTTP Routing](#http-routing)
 
 <a name="modules"></a>
 ### Modules
@@ -228,3 +231,47 @@ console.log(fruitsName('es'));
 
 > কোনো package install করলে node_modules নামে একটি ফোল্ডার নিজে থেকে তৈরি হয়ে যায়। যার size বেশ বড় হয়ে থাকে। আমরা সচরাচর চাই না এই ফাইলটা github এ upload করতে তাই এটাকে ignore করার জন্য একটা ফাইল তৈরি করতে হবে .gitignore নামে এবং সেখানে লিখে দিতে হবে node_modules/ 
 </details>
+
+<a name="http-routing"></a>
+### HTTP Routing
+
+http routing মানে হচ্ছে এক পেজ থেকে আরেক পেজে যাওয়া। আমরা আমাদের তৈরিকৃত সার্ভারে html page এর লিংকগুলোকে routing আকারে কাজ করার জন্য নিম্নোক্ত ধাপসমূহ অনুসরণ করতে পারি, তা যথাক্রমে... 
+```javascript
+const fs = require('fs')
+const http = require('http')
+const port = 3000
+const hostname = '127.0.0.1'
+
+const server = http.createServer((req, res)=>{
+
+   const handleFileRead = (statusCode,fileLocation) => {
+      fs.readFile(fileLocation,(err,data)=>{
+          যে ফাইলটি রিড করতে চাওয়া হবে প্রথমে সেই ফাইলের নাম লোকেশন সহ দিতে হবে। সেই সাথে একটি কল বেক ফাংশন যুক্ত করে দিতে হবে।
+         res.writeHead(statusCode, {"Content-Type":"text/html"})
+         writehead অংশে status code দিতে হবে, সেই সাথে content-type বলে দিতে হবে।
+         res.write(data)
+         এখানে ফাইলটি দেখানো হবে অর্থাৎ ফাইলের মধ্যে যা যা আছে তা দেখানো হবে।
+         res.end()
+         সর্বশেষ res.end() দিয়ে পুরো সার্ভারের কাজ সমাপ্ত করতে হবে। 
+      })
+   }
+
+   if(req.url=== '/'){
+         handleFileRead(200,"./views/index.html")
+      }
+   else if(req.url=== '/about'){
+         handleFileRead(200,"./views/about.html")
+   }
+   else if(req.url=== '/contact'){
+         handleFileRead(200,"./views/contact.html")
+   }
+   else {
+         handleFileRead(404,"./views/error.html")
+   }
+})
+
+server.listen(port,hostname,()=>{
+   console.log(`server is running successfully at http://${hostname}:${port}`)
+})
+
+```
