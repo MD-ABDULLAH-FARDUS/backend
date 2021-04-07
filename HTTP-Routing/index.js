@@ -11,7 +11,7 @@ const server = http.createServer((req, res)=>{
          res.write(data)
          res.end()
       })
-   }
+   } 
 
    if(req.url=== '/'){
          handleFileRead(200,"./views/index.html")
